@@ -27,7 +27,7 @@ function Grade(props:GradeProps): JSX.Element {
             {(grade!==100) &&   <button onClick={addPoint}>+</button>}
 
             {
-                (props.grade) ? <p className=()> {grade}</p> :<p className="evil">No grade yet</p>
+                (props.grade) ? <p className={(grade>90)?'exelent':(grade>75)?'good':(grade>60)? 'ok': 'bad'  }> {grade}</p> :<p className="evil">No grade yet</p>
         }
 			{(grade!==0) && <button onClick={subPoint}>-</button>}
             </div>
