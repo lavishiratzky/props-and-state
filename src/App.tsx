@@ -4,10 +4,12 @@ import './App.css';
 import Grade from './Components/School/Grade/Grade';
 
 function App() {
+
+ 
   return (
     <div className="App">
      <Grade name={'orel'} grade={100}/> 
-     <Grade name={'lavi'} /> 
+     <Grade name={'lavi'} grade={10} /> 
     </div>
   );
 }
