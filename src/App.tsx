@@ -1,8 +1,7 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Parent from './Components/Lifecycle/Parent/Parent';
 import Grade from './Components/School/Grade/Grade';
-
 function App() {
 
  
@@ -12,6 +11,7 @@ function App() {
       <Grade name={'orel'} grade={67}/>
       <Grade name={'orel'} grade={89}/>
      <Grade name={'lavi'} grade={10} /> 
+<Parent/>
     </div>
   );
 }
