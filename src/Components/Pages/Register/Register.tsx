@@ -36,21 +36,21 @@ function Register(): JSX.Element {
 <form onSubmit={handleSubmit(sendDataToRemoteServer)}>
 
 {errors?.firstName && <span>{errors.firstName.message}</span>}
-<input {...Register("firstName")} type="text" placeholder="First Name..." name="first"/>
+<input {...register("firstName")} type="text" placeholder="First Name..."/>
 
 {errors?.lastName &&<span>{errors.lastName.message}</span>}
-<input {...Register("lastNnme")} type="text" placeholder="Last Name..." name="last"/>
+<input {...register("lastName")} type="text" placeholder="Last Name..." />
 
 {errors?.email&&<span>{errors.email.message}</span>}
-<input {...Register("email")} type="email" placeholder="Email..." name="email"/>
+<input {...register("email")} type="email" placeholder="Email..." />
 
 {errors?.password&&<span>{errors.password.message}</span>}
-<input {...Register("password")} type="password" placeholder="password..." name="password"/>
+<input {...register("password")} type="password" placeholder="password..." />
 
 {errors?.confirm&&<span>{errors.confirm.message}</span>}
-<input {...Register("confirm")} type="password" placeholder="Confirm password" name="Confirm"/>
+<input {...register("confirm")} type="password" placeholder="Confirm password" />
 
-<button disabled={!isValid}>Send</button>
+<button type ="submit" disabled={!isValid}>Send</button>
             </form>	
         </div>
     );

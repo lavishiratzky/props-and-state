@@ -13,7 +13,7 @@ function Login(): JSX.Element {
     password:
        yup.string()
        .length(4,"Password must be at least 4 characters")
-       .required("Password is required"),
+       .required(notifyService.failure),
     confirm:
         yup.string()
         .required("Confirm password is required")
@@ -31,14 +31,14 @@ function Login(): JSX.Element {
 <form onSubmit={handleSubmit(sendDataToRemoteServer)}>
 
 {errors?.email&&<span>{errors.email.message}</span>}
-<input {...Login("email")} type="email" placeholder="Email..." name="email"/>
+<input {...register ("email")} type="email" placeholder="Email..."/>
 
 {errors?.password&&<span>{errors.password.message}</span>}
-<input {...Login("password")} type="password" placeholder="password..." name="password"/>
+<input {...register ("password")} type="password" placeholder="password..." name="password"/>
 
 {errors?.confirm&&<span>{errors.confirm.message}</span>}
-<input {...Login("confirm")} type="password" placeholder="Confirm password" name="Confirm"/>
-<button disabled={!isValid}>Send</button>
+<input {...register ("confirm")} type="password" placeholder="Confirm password" name="Confirm"/>
+<button  type ="submit" disabled={!isValid}>Send</button>
             </form>
         </div>
     );
